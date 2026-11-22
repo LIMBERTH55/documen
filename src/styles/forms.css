@@ -1,0 +1,257 @@
+/* ---------------------------------
+   Modal
+---------------------------------- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(6, 20, 40, 0.56);
+  backdrop-filter: blur(5px);
+  animation: fade-in 0.2s ease both;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 570px);
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 40px 100px -25px rgba(3, 15, 34, 0.55);
+  animation: rise-in 0.25s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+}
+
+.modal--lg {
+  width: min(100%, 740px);
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 21px 23px 17px;
+  border-bottom: 1px solid #eef2f8;
+}
+
+.modal__header h2 {
+  color: var(--ink);
+  font-size: 18.5px;
+  font-weight: 740;
+  letter-spacing: -0.03em;
+}
+
+.modal__header p {
+  max-width: 560px;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11.3px;
+  line-height: 1.5;
+}
+
+.modal__body {
+  padding: 21px 23px;
+  overflow-y: auto;
+}
+
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  padding: 15px 23px;
+  background: #fbfdff;
+  border-top: 1px solid #eef2f8;
+}
+
+/* ---------------------------------
+   Record form
+---------------------------------- */
+
+.record-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-bottom: 18px;
+  padding: 9px 11px;
+  color: #42608e;
+  background: #f4f8ff;
+  border: 1px solid #e1ebfb;
+  border-radius: 10px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.form-note strong {
+  color: var(--blue-700);
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  color: var(--ink-soft);
+  font-size: 10.5px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.form-label em {
+  color: #e11d48;
+  font-style: normal;
+}
+
+.form-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  background: #fff;
+  border: 1px solid #dce5f1;
+  border-radius: 10px;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.form-control:focus-within {
+  border-color: #7fb2f2;
+  box-shadow: 0 0 0 3px rgba(47, 123, 232, 0.11);
+}
+
+.form-control__icon {
+  position: absolute;
+  left: 12px;
+  color: #91a4bc;
+  pointer-events: none;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+  width: 100%;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 11.8px;
+}
+
+.form-control input,
+.form-control select {
+  height: 40px;
+  padding: 0 11px 0 36px;
+}
+
+.form-control select {
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.form-control textarea {
+  min-height: 108px;
+  padding: 11px 12px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.form-control input::placeholder,
+.form-control textarea::placeholder {
+  color: #a8b6c8;
+}
+
+.form-control--textarea {
+  display: block;
+  min-height: 0;
+}
+
+.form-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #dc2626;
+  font-size: 9.8px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.form-hint {
+  color: var(--muted-light);
+  font-size: 9.5px;
+  line-height: 1.35;
+}
+
+.form-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.char-count {
+  flex: none;
+  color: var(--muted-light);
+  font-size: 9.2px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+}
+
+/* ---------------------------------
+   Confirm dialog
+---------------------------------- */
+
+.confirm-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 2px 0;
+}
+
+.confirm-message__icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 13px;
+}
+
+.confirm-message p {
+  padding-top: 3px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.55;
+}

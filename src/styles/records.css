@@ -1,0 +1,515 @@
+/* ---------------------------------
+   Records card
+---------------------------------- */
+
+.records-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.records-toolbar {
+  padding: 21px 21px 18px;
+  border-bottom: 1px solid #eef2f8;
+}
+
+.records-toolbar__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.records-toolbar__title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.records-toolbar__heading h2 {
+  color: var(--ink);
+  font-size: 17.5px;
+  font-weight: 730;
+  letter-spacing: -0.025em;
+}
+
+.records-toolbar__heading p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10.8px;
+  line-height: 1.45;
+}
+
+.count-badge {
+  min-width: 23px;
+  padding: 2px 7px;
+  color: var(--blue-700);
+  background: var(--blue-50);
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.search-field__label {
+  color: var(--muted);
+  font-size: 9.8px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.search-field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background: #fbfdff;
+  border: 1px solid #dce5f1;
+  border-radius: 10px;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.search-field__control:focus-within {
+  background: #fff;
+  border-color: #7fb2f2;
+  box-shadow: 0 0 0 3px rgba(47, 123, 232, 0.11);
+}
+
+.search-field__icon {
+  position: absolute;
+  left: 12px;
+  color: #91a4bc;
+  pointer-events: none;
+}
+
+.search-field__control input {
+  width: 100%;
+  height: 100%;
+  padding: 0 34px 0 35px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 11.3px;
+}
+
+.search-field__control input::placeholder {
+  color: #a8b6c8;
+}
+
+.search-field__control input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-field__clear {
+  position: absolute;
+  right: 7px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: #8ca0b8;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+}
+
+.search-field__clear:hover {
+  color: var(--blue-700);
+  background: #eef5ff;
+}
+
+/* ---------------------------------
+   Table
+---------------------------------- */
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.records-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.records-table thead {
+  background: #f8fafd;
+}
+
+.records-table th {
+  padding: 10px 18px;
+  color: #64748b;
+  border-bottom: 1px solid #e8eef7;
+  font-size: 9.4px;
+  font-weight: 720;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.records-table th:first-child {
+  padding-left: 21px;
+}
+
+.records-table th:last-child {
+  padding-right: 21px;
+}
+
+.records-table th.actions-header {
+  text-align: right;
+}
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  text-transform: inherit;
+  transition: color 0.18s ease;
+}
+
+.sort-button:hover {
+  color: var(--blue-700);
+}
+
+.sort-indicator {
+  color: #b2bfd0;
+  transition: color 0.18s ease;
+}
+
+.sort-indicator--active {
+  color: var(--blue-600);
+}
+
+.records-table tbody tr {
+  border-bottom: 1px solid #f0f4fa;
+  transition: background-color 0.16s ease;
+}
+
+.records-table tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.records-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+.records-table td {
+  padding: 11px 18px;
+  color: var(--ink-soft);
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.records-table td:first-child {
+  padding-left: 21px;
+}
+
+.records-table td:last-child {
+  padding-right: 21px;
+}
+
+.career-cell {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.career-avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: 9px;
+  font-size: 9.2px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.career-avatar--0 {
+  color: #1d4ed8;
+  background: #eaf1ff;
+}
+
+.career-avatar--1 {
+  color: #4f46e5;
+  background: #eeedff;
+}
+
+.career-avatar--2 {
+  color: #0f766e;
+  background: #e6f8f5;
+}
+
+.career-avatar--3 {
+  color: #b45309;
+  background: #fff5e5;
+}
+
+.career-avatar--4 {
+  color: #be185d;
+  background: #fdf2f8;
+}
+
+.career-cell__name {
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 11.2px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.code-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  color: #0e4aa6;
+  background: #eef5ff;
+  border: 1px solid #dbeafe;
+  border-radius: 7px;
+  font-size: 10.2px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.description-cell {
+  display: -webkit-box;
+  max-width: 480px;
+  overflow: hidden;
+  color: #526176;
+  font-size: 10.8px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.date-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 10.2px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.date-cell svg {
+  color: #9aabc0;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+/* ---------------------------------
+   Mobile record cards
+---------------------------------- */
+
+.records-mobile-list {
+  display: none;
+  padding: 13px;
+}
+
+.record-card {
+  padding: 13px;
+  background: #fbfdff;
+  border: 1px solid #e6edf6;
+  border-radius: 13px;
+}
+
+.record-card + .record-card {
+  margin-top: 9px;
+}
+
+.record-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.record-card__top .career-cell {
+  min-width: 0;
+}
+
+.record-card__top .career-cell__name {
+  font-size: 11.3px;
+}
+
+.record-card__top .code-badge {
+  flex: none;
+}
+
+.record-card__description {
+  margin: 10px 0;
+  color: #526176;
+  font-size: 10.7px;
+  line-height: 1.5;
+}
+
+.record-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 9px;
+  border-top: 1px solid #edf2f8;
+}
+
+/* ---------------------------------
+   Table footer & pagination
+---------------------------------- */
+
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 21px;
+  background: #fbfdff;
+  border-top: 1px solid #eef2f8;
+}
+
+.table-footer__info {
+  color: var(--muted);
+  font-size: 10.3px;
+  white-space: nowrap;
+}
+
+.table-footer__info strong {
+  color: var(--ink-soft);
+  font-weight: 650;
+}
+
+.table-footer__controls {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.page-size {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.page-size select {
+  height: 30px;
+  padding: 0 5px;
+  color: var(--ink-soft);
+  background: #fff;
+  border: 1px solid #dce5f1;
+  border-radius: 7px;
+  outline: none;
+  font-size: 10.2px;
+  cursor: pointer;
+}
+
+.page-size select:focus {
+  border-color: #7fb2f2;
+  box-shadow: 0 0 0 3px rgba(47, 123, 232, 0.1);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.pagination__arrow,
+.pagination__page {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 10.3px;
+  font-weight: 600;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.pagination__arrow:hover:not(:disabled),
+.pagination__page:hover {
+  color: var(--blue-700);
+  background: #eef5ff;
+}
+
+.pagination__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pagination__page.is-active {
+  color: #fff;
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+  box-shadow: 0 4px 10px -5px rgba(11, 59, 140, 0.6);
+}
+
+.pagination__ellipsis {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 29px;
+  color: var(--muted-light);
+  font-size: 10px;
+}
+
+.pagination__mobile-label {
+  display: none;
+  color: var(--muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
